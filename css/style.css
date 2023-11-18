@@ -1,0 +1,662 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  overflow: hidden;
+}
+
+header {
+  background-color: rgb(52, 52, 52);
+  color: #fff; /* Color del texto */
+  padding: 10px 0; /* Espaciado interno */
+  text-align: center; /* Alineación de texto al centro */
+}
+
+/*estilos para el menu*/
+
+/* Estilos para el footer */
+footer {
+  margin-top: 10px;
+  background-color: rgb(52, 52, 52);
+  color: #fff; /* Color del texto */
+  padding: 20px 0; /* Espaciado interno */
+  text-align: center; /* Alineación de texto al centro */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  background: #11101d;
+  padding: 15px;
+  z-index: 99;
+}
+.logo {
+  font-size: 25px;
+  padding: 0 15px;
+}
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+}
+.menu-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 40px;
+  overflow-y: scroll;
+}
+.menu-content::-webkit-scrollbar {
+  display: none;
+}
+.menu-items {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.submenu-active .menu-items {
+  transform: translateX(-56%);
+}
+.menu-title {
+  color: #fff;
+  font-size: 14px;
+  padding: 15px 20px;
+}
+.item a,
+.submenu-item {
+  padding: 16px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 12px;
+}
+.item i {
+  font-size: 12px;
+}
+.item a:hover,
+.submenu-item:hover,
+.submenu .menu-title:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.submenu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+.submenu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: calc(-100% - 26px);
+  height: calc(100% + 100vh);
+  background: #11101d;
+  display: none;
+}
+.show-submenu ~ .submenu {
+  display: block;
+}
+.submenu .menu-title {
+  border-radius: 12px;
+  cursor: pointer;
+}
+.submenu .menu-title i {
+  margin-right: 10px;
+}
+.navbar,
+.main {
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+.sidebar.close ~ .navbar,
+.sidebar.close ~ .main {
+  left: 0;
+  width: 100%;
+}
+.navbar {
+  /****/
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+  background: #4070f4;
+  cursor: pointer;
+}
+.navbar #sidebar-close {
+  cursor: pointer;
+}
+
+.main {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 100;
+  background: #e7f2fd;
+}
+.main .titulos {
+  color: #11101d;
+  padding-top: 10px;
+  font-size: 40px;
+  text-align: center;
+  clear: both;
+}
+
+/* Estilos para la tabla */
+.tabla {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Estilos para los encabezados de la tabla */
+.tabla th {
+  background-color: #007bff; /* Color de fondo para los encabezados */
+  color: #fff; /* Color del texto en los encabezados */
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Estilos para las celdas de la tabla */
+.tabla td {
+  border: 1px solid #ccc; /* Borde de las celdas */
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilos para las filas impares de la tabla */
+.tabla tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Color de fondo para las filas impares */
+}
+
+/* Estilos para los enlaces dentro de las celdas de acciones */
+.tabla td a {
+  text-decoration: none;
+  color: #007bff; /* Color de los enlaces */
+  margin-right: 10px;
+}
+
+/* Estilos para los enlaces de editar y borrar */
+.tabla td a:hover {
+  text-decoration: underline; /* Subrayar al pasar el cursor */
+}
+
+/* Estilos para formulario de de paginas administrables */
+
+.form-page {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-page label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-page input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-page input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-page input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+table input[type="submit"] {
+  background-color: #418ade;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+}
+
+table input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#profile {
+  border-bottom: solid 1px var(--hovercolor);
+  padding: var(--padding);
+  text-align: center;
+}
+
+#profile #photo {
+  box-sizing: border-box;
+  padding: var(--padding);
+  margin: 0 auto;
+}
+#profile #photo img {
+  width: 40%;
+  border-radius: 50%;
+}
+#profile #name {
+  color: #fff;
+  overflow: hidden;
+}
+
+/**********  form page **********/
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container header {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+}
+
+.container .form {
+  margin-top: 15px;
+}
+
+.form .input-box {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.input-box label {
+  color: #000;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #808080;
+  margin-top: 5px;
+  border: 1px solid #ee4e34;
+  border-radius: 6px;
+  padding: 0 15px;
+  background: #fcedda;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .gender-box {
+  margin-top: 10px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: #ee4e34;
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #000;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 10px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #808080;
+  font-size: 1rem;
+  background: #fcedda;
+}
+.btn-editar {
+  height: 40px;
+  width: 100%;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #4c52c8;
+}
+
+.btn-editar:hover {
+  background: #ee3e34;
+}
+
+/*estilo para menu de inicio*/
+#menuInicio {
+  background-color: #424de7; /* Fondo del menú */
+  color: #fff; /* Color del texto */
+  font-size: 16px; /* Tamaño de fuente */
+  padding: 10px 0; /* Espaciado interno */
+  text-align: center; /* Alineación de texto al centro */
+}
+
+#menuInicio ul {
+  list-style-type: none; /* Quitar las viñetas de la lista */
+  padding: 0; /* Quitar el espacio interior */
+}
+
+#menuInicio li {
+  display: inline; /* Mostrar los elementos en línea */
+  margin-right: 20px; /* Espacio entre elementos del menú */
+}
+
+#menuInicio a {
+  text-decoration: none; /* Quitar subrayado de los enlaces */
+  color: #fff; /* Color de texto de los enlaces */
+}
+
+#menuInicio a:hover {
+  color: #000; /* Color de texto al pasar el cursor */
+}
+
+/*** estilos para la pagina de inicio ***/
+
+#principal {
+  background-color: #f4f4f4; /* Color de fondo */
+  padding: 20px; /* Espaciado interior */
+  text-align: center; /* Alinear el texto al centro */
+
+  /* Estilos del texto */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333; /* Color de texto */
+}
+
+#principal h3 {
+  color: #0077b6; /* Color de encabezados */
+}
+
+#principal ul {
+  list-style-type: disc; /* Tipo de viñeta */
+  text-align: left; /* Alinear el texto a la izquierda */
+  margin-left: 20px; /* Margen izquierdo para la lista */
+}
+
+#principal ul li {
+  margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+}
+
+#principal p {
+  margin-top: 20px; /* Espaciado superior para el párrafo */
+}
+
+/*** estilos para formulario de inicio de sesion ***/
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  color: rgb(97 97 97);
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05);
+  width: 22rem;
+  background-clip: border-box;
+
+  /* Para centrar horizontalmente */
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  background-clip: border-box;
+  background-color: #1e88e5;
+  background-image: linear-gradient(to top right, #1e88e5, #42a5f5);
+  margin: 10px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000,
+    rgba(33, 150, 243, 0.4);
+  height: 7rem;
+  letter-spacing: 0;
+  line-height: 1.375;
+  font-weight: 600;
+  font-size: 1.9rem;
+  font-family: Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs {
+  padding: 1.5rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  width: 100%;
+  height: 2.75rem;
+  position: relative;
+}
+
+.input {
+  border: 1px solid rgba(128, 128, 128, 0.61);
+  outline: 0;
+  color: rgb(69 90 100);
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  padding: 0.75rem;
+  background-color: transparent;
+  border-radius: 0.375rem;
+  width: 100%;
+  height: 100%;
+}
+
+.input:focus {
+  border: 1px solid #1e88e5;
+}
+
+.checkbox-container {
+  margin-left: -0.625rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.checkbox {
+  position: relative;
+  overflow: hidden;
+  padding: 0.55rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.027);
+  height: 35px;
+  width: 35px;
+}
+
+.checkbox input {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  cursor: pointer;
+}
+
+.sigin-btn {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #1e88e5;
+  background-image: linear-gradient(to top right, #1e88e5, #42a5f5);
+  border-radius: 0.5rem;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+.signup-link {
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: 0.3s ease;
+  background-color: #00bfff;
+}
+
+.submit:hover {
+  background-color: #00bfff96;
+}
+
+.signup-link a,
+.forget {
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+  color: #1e88e5;
+}
+
+.forget {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Estilos para los enlaces de paginación */
+a.paginas {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 2px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+a.paginas:hover {
+  background-color: #f5f5f5;
+}
+
+a.paginas.active {
+  background-color: #337ab7;
+  color: #fff;
+  border-color: #2e6da4;
+}
+/*** para el select de la paginas*/
+
+/* Estilos para el elemento select */
+.select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none; /* Esto es para resetear la apariencia predeterminada del select en algunos navegadores */
+  -webkit-appearance: none; /* Para navegadores basados en WebKit (Safari, Chrome) */
+  -moz-appearance: none; /* Para navegadores basados en Gecko (Firefox) */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><polygon points="6 0 0 6 12 6"/></svg>'); /* Icono de flecha personalizado */
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 12px);
+  background-position-y: center;
+  background-color: #fff;
+}
+
+/* Estilo al pasar el mouse por el select */
+.select:hover {
+  border-color: #aaa;
+}
+
+/* Estilo al enfocar el select */
+.select:focus {
+  outline: none;
+  border-color: #555;
+}
+
+/* Estilo para las opciones del select */
+.select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Estilo para la flecha del select */
+.select::after {
+  content: '\25BC'; /* Código Unicode para la flecha hacia abajo */
+  position: absolute;
+  top: calc(50% - 4px);
+  right: 8px;
+  pointer-events: none;
+  color: #555;
+}
